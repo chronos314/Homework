@@ -1,4 +1,7 @@
 package day02;
+
+import java.util.Objects;
+
 /**
  * 定义私有属性:
  * String name;
@@ -12,5 +15,40 @@ package day02;
  *
  */
 public class Person {
+    private String name;
+    private int age;
+    private String gender;
+    private int Salary;
 
+    public Person(){
+    }
+    public Person(String name, int age, String gender, int salary) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        Salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", Salary=" + Salary +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }

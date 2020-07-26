@@ -1,6 +1,7 @@
 package day02;
 
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  * 实现文件重命名。
@@ -12,13 +13,15 @@ import java.util.Date;
  */
 public class Test05 {
 	public static void main(String[] args) {
-		String str="abc.jpg";
+		System.out.println("请输入文件名:");
+		Scanner console=new Scanner(System.in);
+		String str=console.nextLine();
 		Date date = new Date();
 		// 将时间从date类型, 转换成了long类型所表示的毫秒值
 		long time = date.getTime();
 		String regex="\\.";
 		String[] a=str.split(regex);
-		a[0]=a[0].replaceAll("[a-zA-Z]+", String.valueOf(time));
+		a[0]=a[0].replaceAll("\\w+", String.valueOf(time));
 		System.out.println(a[0]+'.'+a[1]);
 		
 	}

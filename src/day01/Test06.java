@@ -1,4 +1,8 @@
 package day01;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * 要求用户输入一个计算表达式，可以使用加减乘除。
  * 只处理一次运算的，不要有连续加减乘除的表达式,且不做小数计算。(例:1+2+3)
@@ -10,8 +14,27 @@ package day01;
  */
 public class Test06 {
 	public static void main(String[] args) {
-		
+		double sum=0;
+		System.out.println("请输入计算表达式：");
+		Scanner console=new Scanner(System.in);
+		String str=console.nextLine();
+		String regex = "[\\+\\-\\*\\/]";
+		String[] words = str.split(regex);
+		if (str.charAt(words[0].length())=='+'){
+			sum=parseInt(words[0])+parseInt(words[1]);
+		}
+		if (str.charAt(words[0].length())=='-'){
+			sum=parseInt(words[0])-parseInt(words[1]);
+		}
+		if (str.charAt(words[0].length())=='*'){
+			sum=parseInt(words[0])*parseInt(words[1]);
+		}
+		if (str.charAt(words[0].length())=='/'){
+			sum=(double) parseInt(words[0])/parseInt(words[1]);
+		}
+		System.out.println(str+"="+sum);
 	}
+	//转换成实际数字
 	public static int parseInt(String str){
 		// 最后要生成的数字
 		int num = 0;
@@ -21,7 +44,7 @@ public class Test06 {
 			flag = (str.charAt(i) - 48);
 			/*
 			 * 这里是将对应的数字计算为对应的位，例如百位数字就要用该数字乘以10的2次方
-			 * 得到
+			 * 得到31`e21`dqA
 			 * 可以用Math的相关方法处理(自行查看API文档)
 			 */
 			for (int n = 0; n < str.length() - 1 - i; n++) {
