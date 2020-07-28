@@ -9,7 +9,7 @@ package day01;
  * 7:输出"HelloWorld"中第6个字符"W"
  * 8:输出"HelloWorld"是否是以"h"开头和"ld"结尾的。
  * 9:将"HelloWorld"分别转换为全大写和全小写并输出。
- * @author Bonnie 行不行
+ * @author Bonnie 行不行啊
  *
  */
 public class Test01 {
