@@ -1,4 +1,8 @@
 package day03;
+
+import java.util.Date;
+import java.util.Objects;
+
 /**
  * 定义私有属性:
  * String name;
@@ -16,5 +20,49 @@ package day03;
  *
  */
 public class Emp {
+    private String name;
+    private int age;
+    private String gender;
+    private int salary;
+    private Date hiredate;
 
+    public Emp(String name, int age, String gender, int salary, Date hiredate) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.salary = salary;
+        this.hiredate = hiredate;
+    }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", salary=" + salary +
+                ", hiredate=" + hiredate +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Emp emp = (Emp) o;
+        return Objects.equals(name, emp.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -20,7 +20,7 @@ public class Test01 {
         boolean m1=str.matches(regex1);
         boolean m2=str.matches(regex2);
         if(m1){
-            int i=Integer.parseInt(str);
+            int i=Integer.parseInt(str);//Integer.walueOf()转换成integer类型
             sum=i*10;
             System.out.println("整数，计算结果为："+sum);
         }else if (m2){
