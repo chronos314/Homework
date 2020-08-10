@@ -23,5 +23,10 @@ public class Test03 {
         int week= (int) (b/(1000*60*60*24*7));
         System.out.println(week);
     }
+    //改：输入字符串，根据格式转换成date，Date date=new(....);
+    /*String s = "19980228";
+    SimpleDateFormat sf1 = new
+            SimpleDateFormat("yyyy-MM-dd");
+    Date date1 = sf1.parse(s);*/
 
 }
